@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-container {
+    height: 100vh;
+    width: 100%;
+}
+
+.carousel {
+    height: inherit;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+.slide {
+    height: inherit;
+    position: absolute;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: 100% 100%;
+    color: white;
+    background-color: black;
+    opacity: 0;
+}
+
+#slide-1 {
+    background-image: url('https://images.pexels.com/photos/4101555/pexels-photo-4101555.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+#slide-2 {
+    background-image: url('https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+
+#slide-3 {
+    background-image: url('https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+#slide-4 {
+    background-image: url('https://images.pexels.com/photos/1567069/pexels-photo-1567069.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');  
+}
+
+.slide h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.slide p {
+    font-size: 1.3rem;
+}
+
+.carousel-btn-container button {
+    position: absolute;
+    border: none;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    z-index: 15;
+    cursor: pointer;
+}
+
+button#prev {
+    top: 50%;
+    left: 15px;
+}
+
+button#next {
+    top: 50%;
+    right: 15px;
+}
+
+.slide.active-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: clipPathAnimation 1s ease forwards;
+    opacity: 1;
+}
+
+@keyframes clipPathAnimation {
+    from {
+        clip-path: circle(0px at center center);
+    }
+
+    to {
+        clip-path: circle(100% at center center);
+    }
+}
